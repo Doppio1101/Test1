@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>메인페이지</title>
+
+  </head>
+  <body>
+    <form class="main" action="#" method="post">
+      <div class="">
+
+
+      <input type="button" name="inboard" value="자유게시판" onclick="goboard()">
+      <input type="button" name="inorder" value="시약 주문" onclick="goorder()">
+      </div>
+      <div>
+        <select class="hypertext" name="hypertext">
+          <option value="http"> http </option>
+          <option value="https"> https </option>
+
+        </select>
+
+      <input type="text" id="searchtext" name="searchtext"  value="" placeholder="링크 입력" size="15">
+      <input type="button" name="" value="이동" onclick="gotext()">
+      </div>
+      <div>
+        <input type="text" name="golink" id="golink" value="" readonly>
+      </div>
+    </form>
+  </body>
+  <script src="https://doppio1101.github.io/SongLimJS/main.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function gotext(){
+      var sel = document.querySelector(".hypertext").value;
+      //var text = document.getElementById("searchtext").value;
+      var text = document.querySelector("#searchtext").value;
+      var search = sel +"://" + text;
+      document.querySelector("#golink").value = search;
+      //window.open(search,"_self","");
+      //window.open("https://" + text,"_self","");
+
+      //아이디어
+      /* 버튼 클릭했을 때 펑션 불러오고 var에다가 정보 저장하고 열려고 하는 창 열고 열었을 때 바꿀 정보 id 불러온 다음에 그 벨류에 var로 저장한 정보 넣어주기 가능?
+      자바스크립트가 페이지가 바뀔 때도 정보를 계속 가지고 있는지가 궁금. 페이지가 바뀔 때 자바스크립트에 저장한 정보가 사라지는가?
+      */
+    }
+  </script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<style media="screen">
+fieldset{width: 100%;
+        height: auto;
+        padding: 1%;}
+
+ table{width: 80%;
+      height: auto;
+      margin-left: 10%;
+      margin-right: : 10%;}
+.ReagentIMG{width: 60%;
+    height: auto;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: : 10%;
+  font-weight: bold;}
+.ReagentName{width: 20%;
+        height: auto;
+        text-align: center;
+        font-weight: bold;}
+.Quantity{width: 20%;
+      height: auto;
+    text-align: center;
+    font-weight: bold;}
+
+</style>
+  <head>
+    <meta charset="utf-8">
+    <title>시약 주문</title>
+
+  </head>
+  <body>
+    <fieldset>
+    <form class="main" action="#" method="post">
+
+      <input type="button" name="inboard" value="메인" onclick="gomain()">
+      <input type="text" id="searchReagent" name="" value="" placeholder="시약 검색">
+      <input type="button" name="" value="검색">
+      <input type="button" name="" value="즐겨찾기">
+      <!--즐겨찾기 파훼법으로 작은 창을 띄우고 그 작은 창만 경로지정해서 열 수 있도록-->
+      <table border="2">
+
+      <tr>
+        <th class="ReagentIMG"> Reaent </th>
+        <th class="ReagentName"> 품명 </th>
+        <th class="Quantity"> 수량</th>
+        <th></th>
+
+      </tr>
+      <!--전체적으로 그냥 다른 쇼핑몰에서 상품선택해서 들어갈 때처럼 만들고
+      밑에다가 사진/품명 3*n형태로 나열하는 것도 방법일듯-->
+      <tr>
+        <td class="ReagentIMG"> <img src="../SongLim_Reagent/ALB.jpg" width="200px" height="200px" > </td>
+        <td class="ReagentName"> <input type="button" class="Reagent" name="" value="ALB" onclick="NametoJpg('ALB')">  </td>
+        <!-- 버튼에 마우스를 갖다댈 때 누르면 사진을 볼 수 있다고 하거나 크게 볼 수 있다는 안내 -->
+        <td class="Quantity">  <input type="number" name="" value="0" maxlength="3" min = "0">  </td>
+        <!-- 수량 부분의 위 아래 버튼을 넣어서 좀 더 직관성있게 만드는 것도 방법일듯-->
+        <td> <input type="button" name="" value="추가" onclick="Addreagent()"> </td>
+        <!--추가 버튼 누를 때 실제 주문 할 때처럼 지금까지 추가한 내역 띄울 수 있게 하고 삭제할 수 있게 만들기
+        수량 변경도 가능한 넣기-->
+        <!--즐겨찾기 추가하는 버튼 만들-->
+      </tr>
+      </table>
+
+    </form>
+    <textarea name="OrderReagent" id="OrderReagent" rows="8" cols="80"></textarea>
+  </fieldset>
+  </body>
+  <script src="https://doppio1101.github.io/SongLimJS/main.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function NametoJpg(name){
+      //var Reagentname = document.querySelector(name).value;
+      //input에서 onclick부분이 this로 연결되면 할 일이 줄어들 것 같다.
+      window.open("https://github.com/Doppio1101/SongLim_Reagent/blob/main/"+name+".jpg?raw=true" +"\\" + name + ".jpg","_self","");
+      //새창으로 크게 여는 게 아니라 작은 창에 띄우는 정도로 마무리하면 될 듯.
+      //그리고 사진 클릭하면 창 닫히게 하는 것도 방법일듯.
+    }
+
+    function Addreagent(){
+      var nameofreagent = document.querySelector(".Reagent").value;
+      var ordertoreagent = document.querySelector("#OrderReagent").value;
+      var searchReagent = document.querySelector("#searchReagent");
+      var a = 1
+
+      var b = "1"
+      var c = a + b;
+      var d = b + a;
+      var e = a - b;
+      var f = b - a;
+      if(c == d){
+          alert(true + typeof a + typeof c + typeof d + typeof e + typeof f);
+      }
+      else alert(false);
+
+      searchReagent.value = f// + b;
+
+    }
+  </script>
+</html>
