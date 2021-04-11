@@ -9,4 +9,8 @@
 
 메인 시작
 https://doppio1101.github.io/Test1/HTML/main.html
+-------------
+2021.04.12
+- Node.js를 확실히 배우고 다시 시작하도록 함.
+- 생활코딩 WEB2강의를 통해.
 
