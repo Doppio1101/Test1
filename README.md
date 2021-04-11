@@ -6,3 +6,7 @@
 
 - GUI는 HTML과 CSS로 기반.
 - JS를 이용해서 파이썬 기능을 구현.
+
+메인 시작
+https://doppio1101.github.io/Test1/HTML/main.html
+
